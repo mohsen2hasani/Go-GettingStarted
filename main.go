@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"github.com/mohsen2hasani/Go-GettingStarted/models"
+)
 
 func main() {
 	fmt.Println("Hi !")
@@ -14,6 +17,14 @@ func main() {
 	mapTest()
 
 	structTest()
+
+	u := models.User{
+		Id:        5,
+		FirstName: "Mohsen",
+		LastName:  "Hasani",
+	}
+
+	fmt.Println(u)
 }
 
 func varTest() {
