@@ -7,24 +7,63 @@ import (
 
 func main() {
 	fmt.Println("Hi !")
+	fmt.Println("---------------------------------------------------------")
 
+	fmt.Println("varTest")
 	varTest()
+	fmt.Println("---------------------------------------------------------")
 
+	fmt.Println("arrayTest")
 	arrayTest()
+	fmt.Println("---------------------------------------------------------")
 
+	fmt.Println("sliceTest")
 	sliceTest()
+	fmt.Println("---------------------------------------------------------")
 
+	fmt.Println("mapTest")
 	mapTest()
+	fmt.Println("---------------------------------------------------------")
 
+	fmt.Println("structTest")
 	structTest()
+	fmt.Println("---------------------------------------------------------")
 
-	u := models.User{
-		Id:        5,
-		FirstName: "Mohsen",
-		LastName:  "Hasani",
-	}
+	fmt.Println("packageTest")
+	packageTest()
+	fmt.Println("---------------------------------------------------------")
 
-	fmt.Println(u)
+	fmt.Println("loopTest1")
+	loopTest1()
+	fmt.Println("---------------------------------------------------------")
+
+	fmt.Println("loopTest2")
+	loopTest2()
+	fmt.Println("---------------------------------------------------------")
+
+	fmt.Println("loopTest3")
+	loopTest3()
+	fmt.Println("---------------------------------------------------------")
+
+	fmt.Println("loopTest4")
+	loopTest4()
+	fmt.Println("---------------------------------------------------------")
+
+	fmt.Println("loopTest5")
+	loopTest5()
+	fmt.Println("---------------------------------------------------------")
+
+	fmt.Println("loopTest6")
+	loopTest6()
+	fmt.Println("---------------------------------------------------------")
+
+	fmt.Println("loopTest7")
+	loopTest7()
+	fmt.Println("---------------------------------------------------------")
+
+	fmt.Println("loopTest8")
+	loopTest8()
+	fmt.Println("---------------------------------------------------------")
 }
 
 func varTest() {
@@ -102,4 +141,81 @@ func structTest() {
 	}
 
 	fmt.Println(u2)
+}
+
+func packageTest() {
+	u := models.User{
+		Id:        5,
+		FirstName: "Mohsen",
+		LastName:  "Hasani",
+	}
+
+	fmt.Println(u)
+}
+
+func loopTest1() {
+	var i int
+	for i < 5 {
+		fmt.Println(i)
+		i++
+	}
+}
+
+func loopTest2() {
+	for i := 0; i < 5; i++ {
+		fmt.Println(i)
+	}
+}
+
+func loopTest3() {
+	for i := 0; i < 5; i++ {
+		fmt.Println(i)
+
+		if i == 3 {
+			break
+		}
+	}
+}
+
+func loopTest4() {
+	for i := 0; i < 5; i++ {
+		fmt.Println(i)
+
+		if i == 3 {
+			continue
+		}
+		fmt.Println("continuing...")
+	}
+}
+
+func loopTest5() {
+	var i int
+	for {
+		if i == 5 {
+			break
+		}
+		fmt.Println(i)
+		i++
+	}
+}
+
+func loopTest6() {
+	slice := []int{5, 8, 15}
+	for i := 0; i < len(slice); i++ {
+		fmt.Println(slice[i])
+	}
+}
+
+func loopTest7() {
+	slice := []int{5, 8, 15}
+	for i, v := range slice {
+		fmt.Println(i, v)
+	}
+}
+
+func loopTest8() {
+	wellKnownPorts := map[string]int{"http": 80, "https": 443}
+	for k, v := range wellKnownPorts {
+		fmt.Println(k, v)
+	}
 }
