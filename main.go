@@ -64,6 +64,10 @@ func main() {
 	fmt.Println("loopTest8")
 	loopTest8()
 	fmt.Println("---------------------------------------------------------")
+
+	fmt.Println("switchTest")
+	switchTest()
+	fmt.Println("---------------------------------------------------------")
 }
 
 func varTest() {
@@ -217,5 +221,27 @@ func loopTest8() {
 	wellKnownPorts := map[string]int{"http": 80, "https": 443}
 	for k, v := range wellKnownPorts {
 		fmt.Println(k, v)
+	}
+}
+
+func switchTest() {
+	type HTTPRequest struct {
+		Method string
+	}
+
+	r := HTTPRequest{Method: "GET"}
+
+	switch r.Method {
+	case "GET":
+		fmt.Println("Get request")
+		//fallthrough => continue to next case
+	case "DELETE":
+		fmt.Println("Delete request")
+	case "POST":
+		fmt.Println("Post request")
+	case "PUT":
+		fmt.Println("Put request")
+	default:
+		fmt.Println("Default case")
 	}
 }
