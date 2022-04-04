@@ -68,6 +68,10 @@ func main() {
 	fmt.Println("switchTest")
 	switchTest()
 	fmt.Println("---------------------------------------------------------")
+
+	fmt.Println("interfaceTest")
+	interfaceTest()
+	fmt.Println("---------------------------------------------------------")
 }
 
 func varTest() {
@@ -244,4 +248,10 @@ func switchTest() {
 	default:
 		fmt.Println("Default case")
 	}
+}
+
+func interfaceTest() {
+	rec := Rectangle{Length: 12, Width: 4}
+	fmt.Println("Area:", rec.Area())
+	fmt.Println("Perimeter:", rec.Perimeter())
 }
